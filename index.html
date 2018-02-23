@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello World</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0
+    }
+  </style>
+</head>
+<script src="pixi.js"></script>
+
+<body>
+  <script type="text/javascript">
+    let app = new PIXI.Application({
+      width: 256,
+      height: 256
+    });
+
+    app.renderer.view.style.position = "absolute";
+    app.renderer.view.style.display = "block";
+    app.renderer.autoResize = true;
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    app.renderer.backgroundColor = 0xf0f0f0;
+
+    document.body.appendChild(app.view);
+
+    PIXI.loader
+      .add("atlas.png")
+      .load(setup);
+
+    function setup() {
+      let texture = PIXI.utils.TextureCache["atlas.png"];
+      let rectangle = new PIXI.Rectangle(0, 100, 71, 80);
+      texture.frame = rectangle;
+      let sprite = new PIXI.Sprite(texture);
+
+      sprite.position.set(100, 100);
+
+      app.stage.addChild(sprite);
+    }
+  </script>
+</body>
+
+</html>
