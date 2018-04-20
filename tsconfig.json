@@ -1,0 +1,15 @@
+{
+	// See http://go.microsoft.com/fwlink/?LinkId=759670
+	// for the documentation about the jsconfig.json format
+	"compilerOptions": {
+		"target": "es5",
+		"sourceMap": true,
+		"outDir": "./build",
+		// "sourceRoot": "./src",
+		// "outFile": "./dist/main.js",
+		// "module": "es6"
+	},
+	"include": [
+        "./src/**/*"
+    ]
+}
